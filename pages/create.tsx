@@ -4,7 +4,7 @@ import DashboardLayout from "components/DashboardLayout";
 import { useState } from "react";
 
  export default function CreateFundraiser() {
-  const [step, setStep] = useState(2);
+  const [step, setStep] = useState(1);
   const [selectedType, setSelectedType] = useState<number | null>(null);
 
   const renderStep = (step: number) => {

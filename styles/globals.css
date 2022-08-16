@@ -3,7 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-button {
+button, .button-style {
   @apply px-5 py-3 rounded-full bg-blue-400 text-white;
 }
 

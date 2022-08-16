@@ -104,10 +104,10 @@ const navItems = [
     label: "For Contributors",
     route: "contributors",
   },
-  {
-    label: "How It Works",
-    route: "how_it_works",
-  },
+  // {
+  //   label: "How It Works",
+  //   route: "how_it_works",
+  // },
   {
     label: "Create a Fundraiser",
     route: "create",

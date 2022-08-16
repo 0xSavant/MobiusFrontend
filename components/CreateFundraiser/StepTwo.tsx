@@ -2,11 +2,13 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import React from "react";
 import FormField from "./FormField";
+import { MobiusClient } from "utils/mobius.client";
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().required().label("Name"),
   email: Yup.string().required().email().label("Email"),
   location: Yup.string().required().label("Location"),
+  description: Yup.string().required().label("Description"),
   denomination: Yup.string().required().label("Denomination"),
 });
 
@@ -14,12 +16,15 @@ function StepTwo() {
   const denominations = ["SOL", "USDC"];
   return (
     <Formik
-      initialValues={{ email: "", password: "" }}
+      initialValues={{
+        email: "",
+        name: "",
+        location: "",
+        denomination: "",
+        description: "",
+      }}
       onSubmit={(values, { setSubmitting }) => {
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-          setSubmitting(false);
-        }, 400);
+        // Create fundraiser codes here...
       }}
       validationSchema={validationSchema}
     >

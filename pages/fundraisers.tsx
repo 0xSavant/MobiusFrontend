@@ -1,5 +1,6 @@
 import DashboardLayout from "components/DashboardLayout";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Explore() {
   return (
@@ -23,9 +24,16 @@ export default function Explore() {
         a solution to enable the trailblazers of tomorrow to create, while
         empowering the contributors.
       </p>
-      <button className="bg-blue-400 text-white mt-2 mb-4">
-        Create my Fundraiser
-      </button>
+
+      <div className="mt-6">
+        <Link
+          href={{
+            pathname: "/create",
+          }}
+        >
+          <a className="button-style">Create my Fundraiser</a>
+        </Link>
+      </div>
     </DashboardLayout>
   );
 }
