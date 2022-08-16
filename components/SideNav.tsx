@@ -9,6 +9,7 @@ import {
 } from "@mantine/core";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { useWalletModal } from "@solana/wallet-adapter-react-ui";
 
 const useStyles = createStyles((theme) => ({
   link: {
@@ -42,6 +43,7 @@ const useStyles = createStyles((theme) => ({
     },
   },
 }));
+
 
 interface NavbarLinkProps {
   label: string;
@@ -105,7 +107,7 @@ const navItems = [
 
 const SideNav = () => {
   const router = useRouter();
-
+  const { setVisible } = useWalletModal();
   const links = navItems.map((link, index) => (
     <NavbarLink
       {...link}
@@ -119,7 +121,7 @@ const SideNav = () => {
       <div className="max-w-xs fixed bg-green-300">
         <Navbar width={{ base: 80 }} p="md">
           <Center>
-            <Image src="/logo.png" alt="" width={50} height={50} />
+            <Image src="/logo.png" alt="" width={75} height={50} />
           </Center>
           <Navbar.Section grow mt={50}>
             <Stack justify="center" spacing={4}>
@@ -128,7 +130,7 @@ const SideNav = () => {
           </Navbar.Section>
           <Navbar.Section>
             <Stack justify="center" spacing={0}>
-              <NavbarLink label="Connect wallet" icon="wallet" />
+              <NavbarLink label="Connect Wallet" icon="wallet" onClick={()=>setVisible(true)} />
             </Stack>
           </Navbar.Section>
         </Navbar>
