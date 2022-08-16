@@ -9,6 +9,7 @@ import {
 } from "@mantine/core";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { useWalletModal } from "@solana/wallet-adapter-react-ui";
 
 const useStyles = createStyles((theme) => ({
   link: {
@@ -52,12 +53,18 @@ interface NavbarLinkProps {
 }
 
 const NavItem = ({ icon, label, onClick, route, active }: NavbarLinkProps) => {
-  const { classes, cx } = useStyles();
+  const { classes, cx, theme } = useStyles();
   return (
     <Tooltip label={label} position="right" transitionDuration={250}>
       <UnstyledButton
         onClick={onClick}
-        className={cx(classes.link, { [classes.active]: active })}
+        className={cx(classes.link, { [classes.active]: active })} 
+        style={{
+          backgroundColor: active ? theme.fn.variant({
+            variant: "light",
+            color: theme.primaryColor,
+          }).background : '',
+        }}
       >
         <Image
           src={`/side_nav/${icon ?? route}.svg`}
@@ -109,6 +116,7 @@ const navItems = [
 
 const SideNav = () => {
   const router = useRouter();
+  const { setVisible } = useWalletModal();
 
   const links = navItems.map((link, index) => (
     <NavbarLink
@@ -119,7 +127,7 @@ const SideNav = () => {
   ));
 
   const connectWallet = () => {
-    // Wallet connection code goes here....
+    setVisible(true)
   };
 
   return (
@@ -137,7 +145,7 @@ const SideNav = () => {
           <Navbar.Section>
             <Stack justify="center" spacing={0}>
               <NavItem
-                label="Connect wallet"
+                label="Connect Wallet"
                 icon="wallet"
                 onClick={connectWallet}
               />
