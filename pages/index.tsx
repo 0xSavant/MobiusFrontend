@@ -1,82 +1,93 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
+//import Image from 'next/image'
+import styles from '../styles/Home.module.css'
+import { Group, Button, Image } from '@mantine/core'
+import { HeaderAction } from 'components/Header'
+
 
 const Home: NextPage = () => {
+
+  const myLinks = { "link": "/about", "label": "Book a demo" };
+
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
+    <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>Mobius | Funding Without Barriers</title>
+        <meta name="Mobius Protocol" content="Funding Without Barriers" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
+      <HeaderAction links={[]} />
+      <main className={styles.main}>
+        <h1 className={styles.title}>
+          Funding Without <a href="https://nextjs.org">Barriers.</a>
         </h1>
-
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="rounded-md bg-gray-100 p-3 font-mono text-lg">
-            pages/index.tsx
-          </code>
+        <p className={styles.description}>
+          Get started with Mobius.
         </p>
-
-        <div className="mt-6 flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and its API.
-            </p>
+        <Group position='center' spacing='lg'>
+          <Button className={styles.herobutton} radius="lg" variant='gradient' py="sm">Create a Fundraiser</Button>
+        </Group>
+        <br></br>
+        <hr></hr>
+        <br></br>
+        <div className={styles.grid}>
+          <a href="https://nextjs.org/docs" className={styles.card}>
+            <Image className={styles.image}
+              src='https://i.pinimg.com/originals/c1/6f/2f/c16f2fcbd9168e7047e48b09086738ed.jpg'
+              radius="md"
+              py='sm'
+            />
+            <h2>Clemson University &rarr;</h2>
+            <p className={styles.desc}>Clemson University is a public land-grant research university in Clemson, South Carolina. Founded in 1889, Clemson is the second-largest university in student population in South Carolina.</p>
+            <Button className={styles.button} variant='gradient' py="sm">Contribute</Button>
           </a>
 
-          <a
-            href="https://nextjs.org/learn"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
+          <a href="https://nextjs.org/docs" className={styles.card}>
+            <Image className={styles.image}
+              src='https://i.pinimg.com/originals/c1/6f/2f/c16f2fcbd9168e7047e48b09086738ed.jpg'
+              radius="md"
+              py='sm'
+            />
+            <h2>Clemson University &rarr;</h2>
+            <p className={styles.desc}>Clemson University is a public land-grant research university in Clemson, South Carolina. Founded in 1889, Clemson is the second-largest university in student population in South Carolina.</p>
+            <Button className={styles.button} variant='gradient' py="sm">Contribute</Button>
           </a>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
+          <a href="https://nextjs.org/docs" className={styles.card}>
+            <Image className={styles.image}
+              src='https://i.pinimg.com/originals/c1/6f/2f/c16f2fcbd9168e7047e48b09086738ed.jpg'
+              radius="md"
+              py='sm'
+            />
+            <h2>Clemson University &rarr;</h2>
+            <p className={styles.desc}>Clemson University is a public land-grant research university in Clemson, South Carolina. Founded in 1889, Clemson is the second-largest university in student population in South Carolina.</p>
+            <Button className={styles.button} variant='gradient' py="sm">Contribute</Button>
           </a>
 
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
+          <a href="https://nextjs.org/docs" className={styles.card}>
+            <Image className={styles.image}
+              src='https://i.pinimg.com/originals/c1/6f/2f/c16f2fcbd9168e7047e48b09086738ed.jpg'
+              radius="md"
+              py='sm'
+            />
+            <h2>Clemson University &rarr;</h2>
+            <p className={styles.desc}>Clemson University is a public land-grant research university in Clemson, South Carolina. Founded in 1889, Clemson is the second-largest university in student population in South Carolina.</p>
+            <Button className={styles.button} radius="lg" variant='gradient' py="sm">Contribute</Button>
           </a>
         </div>
       </main>
 
-      <footer className="flex h-24 w-full items-center justify-center border-t">
+      <footer className={styles.footer}>
         <a
-          className="flex items-center justify-center gap-2"
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
           rel="noopener noreferrer"
         >
           Powered by{' '}
-          <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+          <span className={styles.logo}>
+            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+          </span>
         </a>
       </footer>
     </div>
