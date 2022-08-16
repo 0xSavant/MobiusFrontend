@@ -130,7 +130,7 @@ const SideNav = () => {
           </Navbar.Section>
           <Navbar.Section>
             <Stack justify="center" spacing={0}>
-              <NavbarLink label="Connect Wallet" icon="wallet" onClick={()=>setVisible(true)} />
+              <NavbarLink label="Connect Wallet" icon="wallet" onClick={()=>setVisible(true)} route='/'/>
             </Stack>
           </Navbar.Section>
         </Navbar>
