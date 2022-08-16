@@ -51,10 +51,26 @@ interface NavbarLinkProps {
   onClick?(): void;
 }
 
-function NavbarLink({ icon, label, onClick, route, active }: NavbarLinkProps) {
+const NavItem = ({ icon, label, onClick, route, active }: NavbarLinkProps) => {
   const { classes, cx } = useStyles();
-  console.log(active, route)
+  return (
+    <Tooltip label={label} position="right" transitionDuration={250}>
+      <UnstyledButton
+        onClick={onClick}
+        className={cx(classes.link, { [classes.active]: active })}
+      >
+        <Image
+          src={`/side_nav/${icon ?? route}.svg`}
+          alt=""
+          width={50}
+          height={50}
+        />
+      </UnstyledButton>
+    </Tooltip>
+  );
+};
 
+function NavbarLink({ icon, label, route, active }: NavbarLinkProps) {
   return (
     <Link
       href={{
@@ -62,19 +78,7 @@ function NavbarLink({ icon, label, onClick, route, active }: NavbarLinkProps) {
       }}
     >
       <a>
-        <Tooltip label={label} position="right" transitionDuration={250}>
-          <UnstyledButton
-            onClick={onClick}
-            className={cx(classes.link, { [classes.active]: active })}
-          >
-            <Image
-              src={`/side_nav/${icon ?? route}.svg`}
-              alt=""
-              width={50}
-              height={50}
-            />
-          </UnstyledButton>
-        </Tooltip>
+        <NavItem icon={icon} label={label} route={route} active={active} />
       </a>
     </Link>
   );
@@ -114,6 +118,10 @@ const SideNav = () => {
     />
   ));
 
+  const connectWallet = () => {
+    // Wallet connection code goes here....
+  };
+
   return (
     <>
       <div className="max-w-xs fixed bg-green-300">
@@ -128,7 +136,11 @@ const SideNav = () => {
           </Navbar.Section>
           <Navbar.Section>
             <Stack justify="center" spacing={0}>
-              <NavbarLink label="Connect wallet" icon="wallet" />
+              <NavItem
+                label="Connect wallet"
+                icon="wallet"
+                onClick={connectWallet}
+              />
             </Stack>
           </Navbar.Section>
         </Navbar>
