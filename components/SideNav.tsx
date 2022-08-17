@@ -153,8 +153,6 @@ const SideNav = () => {
           </Navbar.Section>
         </Navbar>
       </div>
-
-      <div className="w-40"></div>
     </>
   );
 };
