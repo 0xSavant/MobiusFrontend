@@ -1,6 +1,7 @@
 {
   "version": "0.1.0",
-  "name": "mobius_protocol_pl",
+  "name": "MOBIUS_IDL",
+
   "instructions": [
     {
       "name": "createFundraiser",
@@ -191,3 +192,4 @@
     "address": "3BBHkxoqwrspCjJ2tqaCAgeUPTBNcKFCWSy5DSQJEhz4"
   }
 }
+
