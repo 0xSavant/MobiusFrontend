@@ -39,9 +39,9 @@ const StepOne = ({
             onClick={() => setSelectedType(i)}
             className={`${
               selectedType === i
-                ? "bg-teal-800"
-                : "bg-blue-500 hover:bg-blue-400 cursor-pointer"
-            } text-white px-5 py-3 rounded-lg shadow-md shadow-teal-50 text-center h-48 flex flex-col justify-center gap-5 bg-gradient-to-r from-cyan-500 to-blue-500 opacity-75`}
+                ? "from-teal-800 to-teal-600"
+                : "from-cyan-500 to-blue-500 cursor-pointer"
+            } text-white bg-gradient-to-r px-5 py-3 rounded-lg shadow-md shadow-teal-50 text-center h-48 flex flex-col justify-center gap-5`}
           >
             <Text size='lg' className="text-2xl font-bold">{fundraiser.title}</Text>
             <p>{fundraiser.description}</p>
