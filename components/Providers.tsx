@@ -1,4 +1,5 @@
 import { Children } from "interfaces";
+import { AutoConnectProvider } from "components/AutoConnect";
 import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
 import {
   ConnectionProvider,
@@ -35,10 +36,12 @@ export const SolanaProviders = ({ children }: Children) => {
   );
 
   return (
-    <ConnectionProvider endpoint={DEFAULT_ENDPOINT}>
-      <WalletProvider wallets={wallets} autoConnect>
-        <WalletModalProvider>{children}</WalletModalProvider>
-      </WalletProvider>
-    </ConnectionProvider>
+    <AutoConnectProvider>
+      <ConnectionProvider endpoint={DEFAULT_ENDPOINT}>
+        <WalletProvider wallets={wallets} autoConnect>
+          <WalletModalProvider>{children}</WalletModalProvider>
+        </WalletProvider>
+      </ConnectionProvider>
+    </AutoConnectProvider>
   );
 };
