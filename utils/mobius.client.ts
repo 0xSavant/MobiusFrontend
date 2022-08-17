@@ -13,7 +13,7 @@ import {
   translateAddress,
   Address,
 } from "./mobius-common";
-import { MobiusProtocolPl } from "target/types/mobius_protocol_pl";
+import { MobiusProtocolPl } from "utils/mobius_protocol_pl";
 
 export class MobiusClient extends AccountUtils {
   // @ts-ignore
@@ -101,14 +101,15 @@ export class MobiusClient extends AccountUtils {
     fundraiserConfig: Keypair,
     fundraiser: Address,
     tokenVault: PublicKey,
-    start: number,
-    end: number,
+    name: String,
+    description: String,
+    imageLink: String,
     tokenVaultBump: number
   ) {
     const signers = [fundraiserConfig];
     // if (isKp(fundraiser)) signers.push(<Keypair>fundraiser)
     const txSig = await this.mobiusProgram.methods
-      .createFundraiser(toBN(start), toBN(end), tokenVaultBump)
+      .createFundraiser(toBN(name), toBN(description), toBN(imageLink), tokenVaultBump)
       .accounts({
         fundraiserConfig: fundraiserConfig.publicKey,
         fundraiser: translateAddress(fundraiser),
