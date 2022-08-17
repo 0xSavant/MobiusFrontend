@@ -1,7 +1,6 @@
 import StepOne from "components/CreateFundraiser/StepOne";
 import StepTwo from "components/CreateFundraiser/StepTwo";
 import DashboardLayout from "components/DashboardLayout";
-import { Text } from '@mantine/core';
 import { useState } from "react";
 
  export default function CreateFundraiser() {
@@ -29,7 +28,7 @@ import { useState } from "react";
 
   return (
     <DashboardLayout>
-      {step < 3 && <Text weight="bold" size={32} py="lg">Create a Fundraiser</Text>}
+      {step < 3 && <h1>Create a Fundraiser</h1>}
       {renderStep(step)}
     </DashboardLayout>
 

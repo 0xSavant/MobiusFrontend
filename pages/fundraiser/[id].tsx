@@ -8,7 +8,7 @@ const Fundraiser = () => {
     <>
       <Modal>
         <h3>Select contribution type</h3>
-        <div>
+        <div className="mt-3 flex gap-4">
           <button>Standard</button>
           <button>Yield</button>
         </div>
@@ -36,13 +36,13 @@ const Fundraiser = () => {
 
             <button
               onClick={() => setModal()}
-              className="bg-blue-500 text-white mt-6"
+              className="mt-2"
             >
               Contribute
             </button>
-            <div className="flex items-center gap-4">
-              <button>Contact</button>
-              <button>Website</button>
+            <div className="flex items-center gap-4 mt-6">
+              <a>Contact</a>
+              <a>Website</a>
             </div>
           </div>
         </div>
