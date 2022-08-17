@@ -3,17 +3,24 @@ import * as Yup from "yup";
 import React from "react";
 import FormField from "./FormField";
 import { MobiusClient } from "utils/mobius.client";
+import CreateFundraiser from "pages/create";
+import { useConnection, useWallet } from "@solana/wallet-adapter-react";
+import { Program, Provider, web3 } from "@project-serum/anchor";
+import { getProvider } from "../../utils/utils";
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().required().label("Name"),
   email: Yup.string().required().email().label("Email"),
   location: Yup.string().required().label("Location"),
   description: Yup.string().required().label("Description"),
-  denomination: Yup.string().required().label("Denomination"),
 });
 
 function StepTwo() {
   const denominations = ["SOL"]; //Add in USDC later
+  const { connection } = useConnection();
+  const { wallet } = useWallet();
+  const provider = getProvider();
+
   return (
     <Formik
       initialValues={{
@@ -24,7 +31,14 @@ function StepTwo() {
         description: "",
       }}
       onSubmit={(values, { setSubmitting }) => {
-        // Create fundraiser codes here...
+        try {
+          // @ts-ignore
+          const client = new MobiusClient(connection, wallet);
+          //client.createFundraiser
+          //
+        } catch (error) {
+          console.log("error", error);
+        }
       }}
       validationSchema={validationSchema}
     >
@@ -75,7 +89,6 @@ function StepTwo() {
             description="Select which crypto you’d like to recieve"
             radioOptions={denominations}
             type="radio"
-            required
           />
 
           <div className="col-span-2 place-content-center">
