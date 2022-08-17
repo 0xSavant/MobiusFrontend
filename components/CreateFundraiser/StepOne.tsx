@@ -51,7 +51,7 @@ const StepOne = ({
 
       {selectedType !== null && (
         <div className="w-full mt-6 flex justify-center">
-          <button onClick={onContinue} className="button-style bg-gradient-to-r from-cyan-500 to-blue-500 opacity-75 font-semibold">
+          <button onClick={onContinue} className="button-style font-semibold">
             Continue
           </button>
         </div>

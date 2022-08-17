@@ -128,7 +128,7 @@ function StepTwo() {
             <br></br>
             <button
               type="submit"
-              className="button-style bg-gradient-to-r from-cyan-500 to-blue-500 opacity-75 font-semibold"
+              className="button-style font-semibold"
               disabled={isSubmitting}
             >
               Create My Fundraiser

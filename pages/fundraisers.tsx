@@ -35,7 +35,7 @@ export default function Explore() {
             pathname: "/create",
           }}
         >
-          <a className="button-style bg-gradient-to-r from-cyan-500 to-blue-500 opacity-75 font-semibold">
+          <a className="button-style font-semibold">
             Create my Fundraiser
           </a>
         </Link>

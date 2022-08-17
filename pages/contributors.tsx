@@ -33,7 +33,7 @@ export default function Explore() {
             pathname: "/explore",
           }}
         >
-          <a className="button-style bg-gradient-to-r from-cyan-500 to-blue-500 opacity-75 font-semibold">Explore Fundraisers</a>
+          <a className="button-style font-semibold">Explore Fundraisers</a>
         </Link>
       </div>
     </DashboardLayout>

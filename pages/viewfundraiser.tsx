@@ -17,21 +17,21 @@ export default function Explore() {
             pathname: "/create",
           }}
         >
-          <a className="button-style bg-gradient-to-r from-cyan-500 to-blue-500 opacity-75 font-semibold px-6 py-6">Contribute</a>
+          <a className="button-style font-semibold px-6 py-6">Contribute</a>
         </Link>
         <Link className="pl-2"
           href={{
             pathname: "/create",
           }}
         >
-          <a className="button-style bg-gradient-to-r from-cyan-500 to-blue-500 opacity-75 font-semibold pl-6">Website</a>
+          <a className="button-style font-semibold pl-6">Website</a>
         </Link>
         <Link className="pl-2"
           href={{
             pathname: "/create",
           }}
         >
-          <a className="button-style bg-gradient-to-r from-cyan-500 to-blue-500 opacity-75 font-semibold pl-6">Contact</a>
+          <a className="button-style font-semibold pl-6">Contact</a>
         </Link>
         <Text color="gray" className="font-semibold py-10">--- SOL raised</Text>
         <Text className="w-2/3">

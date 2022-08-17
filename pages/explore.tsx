@@ -13,7 +13,7 @@ export default function Explore() {
             pathname: "/create",
           }}
         >
-          <a className="button-style bg-gradient-to-r from-cyan-500 to-blue-500 opacity-75 font-semibold">
+          <a className="button-style font-semibold">
             Create a Fundraiser
           </a>
         </Link>
@@ -62,7 +62,7 @@ const FundraiserCard = () => {
             pathname: `/fundraiser/1`,
           }}
         >
-          <a className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-full font-semibold button-style">
+          <a className="text-white rounded-full font-semibold button-style">
             View
           </a>
         </Link>
