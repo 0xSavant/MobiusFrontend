@@ -1,189 +1,193 @@
 {
-    "version": "0.1.0",
-    "name": "MOBIUS_IDL",
-    "instructions": [
-      {
-        "name": "createFundraiser",
-        "accounts": [
+  "version": "0.1.0",
+  "name": "mobius_protocol_pl",
+  "instructions": [
+    {
+      "name": "createFundraiser",
+      "accounts": [
+        {
+          "name": "fundraiserConfig",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "fundraiser",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "fundraiserSolTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "fundraiserUsdcTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "solTokenVault",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "solMint",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "usdcTokenVault",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "usdcMint",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "rent",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "name": "imageLink",
+          "type": "string"
+        },
+        {
+          "name": "solTokenVaultBump",
+          "type": "u8"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Contributor",
+      "type": {
+        "kind": "struct",
+        "fields": [
           {
-            "name": "fundraiserConfig",
-            "isMut": true,
-            "isSigner": true
+            "name": "contributor",
+            "type": "publicKey"
+          },
+          {
+            "name": "contributorConfig",
+            "type": "publicKey"
+          },
+          {
+            "name": "contributions",
+            "type": "u128"
+          },
+          {
+            "name": "contributorBump",
+            "type": "u8"
           },
           {
             "name": "fundraiser",
-            "isMut": true,
-            "isSigner": true
-          },
-          {
-            "name": "fundraiserSolTokenAccount",
-            "isMut": true,
-            "isSigner": false
-          },
-          {
-            "name": "solTokenVault",
-            "isMut": true,
-            "isSigner": false
-          },
-          {
-            "name": "systemProgram",
-            "isMut": false,
-            "isSigner": false
-          },
-          {
-            "name": "rent",
-            "isMut": false,
-            "isSigner": false
-          },
-          {
-            "name": "tokenProgram",
-            "isMut": false,
-            "isSigner": false
-          }
-        ],
-        "args": []
-      },
-      {
-        "name": "stdContribute",
-        "accounts": [
-          {
-            "name": "contributorConfig",
-            "isMut": true,
-            "isSigner": true
-          },
-          {
-            "name": "fundraiserConfig",
-            "isMut": true,
-            "isSigner": false
-          },
-          {
-            "name": "contributorTokenAccount",
-            "isMut": true,
-            "isSigner": false
-          },
-          {
-            "name": "solTokenVault",
-            "isMut": true,
-            "isSigner": false
-          },
-          {
-            "name": "contributor",
-            "isMut": true,
-            "isSigner": true
-          },
-          {
-            "name": "systemProgram",
-            "isMut": false,
-            "isSigner": false
-          },
-          {
-            "name": "rent",
-            "isMut": false,
-            "isSigner": false
-          },
-          {
-            "name": "tokenProgram",
-            "isMut": false,
-            "isSigner": false
-          }
-        ],
-        "args": [
-          {
-            "name": "amount",
-            "type": "u64"
-          }
-        ]
-      },
-      {
-        "name": "fundraiserWithdrawal",
-        "accounts": [
-          {
-            "name": "vaultPda",
-            "isMut": true,
-            "isSigner": false
-          },
-          {
-            "name": "fundraiserConfig",
-            "isMut": true,
-            "isSigner": false
-          },
-          {
-            "name": "solTokenVault",
-            "isMut": true,
-            "isSigner": false
-          },
-          {
-            "name": "fundraiserSolTokenAccount",
-            "isMut": true,
-            "isSigner": false
-          },
-          {
-            "name": "systemProgram",
-            "isMut": false,
-            "isSigner": false
-          },
-          {
-            "name": "rent",
-            "isMut": false,
-            "isSigner": false
-          },
-          {
-            "name": "tokenProgram",
-            "isMut": false,
-            "isSigner": false
-          }
-        ],
-        "args": [
-          {
-            "name": "amount",
-            "type": "u64"
+            "type": "publicKey"
           }
         ]
       }
-    ],
-    "accounts": [
-      {
-        "name": "Contributor",
-        "type": {
-          "kind": "struct",
-          "fields": [
-            {
-              "name": "contributor",
-              "type": "publicKey"
-            },
-            {
-              "name": "solContributions",
-              "type": "u64"
-            }
-          ]
-        }
-      },
-      {
-        "name": "Fundraiser",
-        "type": {
-          "kind": "struct",
-          "fields": [
-            {
-              "name": "fundraiser",
-              "type": "publicKey"
-            },
-            {
-              "name": "solQty",
-              "type": "u64"
-            },
-            {
-              "name": "solMint",
-              "type": "publicKey"
-            },
-            {
-              "name": "fundraiserSolTokenAccount",
-              "type": "publicKey"
-            }
-          ]
-        }
+    },
+    {
+      "name": "Fundraiser",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "fundraiser",
+            "type": "publicKey"
+          },
+          {
+            "name": "fundraiserConfig",
+            "type": "publicKey"
+          },
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "description",
+            "type": "string"
+          },
+          {
+            "name": "imageLink",
+            "type": "string"
+          },
+          {
+            "name": "solQty",
+            "type": "u128"
+          },
+          {
+            "name": "solMint",
+            "type": "publicKey"
+          },
+          {
+            "name": "usdcQty",
+            "type": "u128"
+          },
+          {
+            "name": "usdcMint",
+            "type": "publicKey"
+          },
+          {
+            "name": "startTime",
+            "type": "u64"
+          },
+          {
+            "name": "endTime",
+            "type": "u64"
+          },
+          {
+            "name": "solTokenVault",
+            "type": "publicKey"
+          },
+          {
+            "name": "solTokenVaultBump",
+            "type": "u8"
+          },
+          {
+            "name": "usdcTokenVault",
+            "type": "publicKey"
+          },
+          {
+            "name": "usdcTokenVaultBump",
+            "type": "u8"
+          },
+          {
+            "name": "fundraiserSolTokenAccount",
+            "type": "publicKey"
+          },
+          {
+            "name": "fundraiserUsdcTokenAccount",
+            "type": "publicKey"
+          }
+        ]
       }
-    ],
-    "metadata": {
-      "address": "5izPbb651w3ZUTgNZnUpmF2bRdzmePAwz4xcnK4NNbEx"
     }
+  ],
+  "metadata": {
+    "address": "3BBHkxoqwrspCjJ2tqaCAgeUPTBNcKFCWSy5DSQJEhz4"
   }
+}
