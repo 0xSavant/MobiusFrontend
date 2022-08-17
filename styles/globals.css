@@ -3,12 +3,13 @@
 @tailwind components;
 @tailwind utilities;
 
-button, .button-style {
-  @apply px-5 py-3 rounded-full bg-blue-400 text-white;
+button,
+.button-style {
+  @apply px-5 py-3 font-medium rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-blue-500 hover:to-cyan-500 text-white;
 }
 
-*{
-    @apply duration-150;
+* {
+  @apply duration-150;
 }
 body {
   font-family: "Graphik", "Inter", system-ui, -apple-system, BlinkMacSystemFont,
@@ -22,8 +23,18 @@ h1 {
 h2 {
   @apply text-2xl font-medium mb-2;
 }
+h3 {
+  @apply text-xl font-medium;
+}
+h4 {
+  @apply text-lg font-medium;
+}
 
+hr {
+  @apply mt-2 mb-4;
+}
 
-input, textarea{
-    @apply bg-gray-50 border border-gray-300 rounded-lg px-5 py-2 w-full;
+input,
+textarea {
+  @apply bg-gray-50 border border-gray-300 rounded-lg px-5 py-2 w-full;
 }
