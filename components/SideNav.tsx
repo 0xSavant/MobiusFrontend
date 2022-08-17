@@ -135,7 +135,7 @@ const SideNav = () => {
       <div className="max-w-xs fixed bg-green-300">
         <Navbar width={{ base: 80 }} p="md">
           <Center>
-            <Image src="/logo.png" alt="" width={50} height={50} />
+            <Image src="/logo.png" alt="" width={60} height={50} />
           </Center>
           <Navbar.Section grow mt={50}>
             <Stack justify="center" spacing={4}>

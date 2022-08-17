@@ -1,3 +1,4 @@
+import { Text } from "@mantine/core";
 import React, { Dispatch, SetStateAction } from "react";
 
 const fundraiserTypes = [
@@ -29,7 +30,8 @@ const StepOne = ({
 }: StepOneProps) => {
   return (
     <>
-      <p>I am fundraising for...</p>
+      <Text py="md">I am fundraising for a...</Text>
+      <br></br>
       <ul className="flex gap-4 items-center mt-6 flex-1">
         {fundraiserTypes.map((fundraiser, i) => (
           <li
@@ -39,9 +41,9 @@ const StepOne = ({
               selectedType === i
                 ? "bg-teal-800"
                 : "bg-blue-500 hover:bg-blue-400 cursor-pointer"
-            } text-white px-5 py-3 rounded-lg shadow-md shadow-teal-50 text-center h-48 flex flex-col justify-center gap-5`}
+            } text-white px-5 py-3 rounded-lg shadow-md shadow-teal-50 text-center h-48 flex flex-col justify-center gap-5 bg-gradient-to-r from-cyan-500 to-blue-500 opacity-75`}
           >
-            <h3 className="text-2xl">{fundraiser.title}</h3>
+            <Text size='lg' className="text-2xl font-bold">{fundraiser.title}</Text>
             <p>{fundraiser.description}</p>
           </li>
         ))}
@@ -49,7 +51,7 @@ const StepOne = ({
 
       {selectedType !== null && (
         <div className="w-full mt-6 flex justify-center">
-          <button onClick={onContinue} className="mx-auto">
+          <button onClick={onContinue} className="button-style bg-gradient-to-r from-cyan-500 to-blue-500 opacity-75 font-semibold">
             Continue
           </button>
         </div>

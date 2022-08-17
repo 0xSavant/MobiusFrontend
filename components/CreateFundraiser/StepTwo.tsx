@@ -13,7 +13,7 @@ const validationSchema = Yup.object().shape({
 });
 
 function StepTwo() {
-  const denominations = ["SOL", "USDC"];
+  const denominations = ["SOL"]; //Add in USDC later
   return (
     <Formik
       initialValues={{
@@ -79,9 +79,10 @@ function StepTwo() {
           />
 
           <div className="col-span-2 place-content-center">
+            <br></br>
             <button
               type="submit"
-              className="bg-blue-700"
+              className="button-style bg-gradient-to-r from-cyan-500 to-blue-500 opacity-75 font-semibold"
               disabled={isSubmitting}
             >
               Create My Fundraiser
